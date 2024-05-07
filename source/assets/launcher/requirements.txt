@@ -1,0 +1,66 @@
+card.png
+    The game’s main card image, visible in the launcher when the view mode is set to "cards".
+    Must be 350 x 155 pixels.
+
+card-highlighted/
+    A folder of images that will be played in in a loop when your game is selected in the launcher
+    when the view mode is set to "cards". Images should be named 1.png, 2.png, etc. 
+    Each image must be 350 x 155 pixels. This folder can optionally contain a text file called animation.txt with the format:
+
+    animation.txt
+        loopCount = 2
+        frames = 1, 2, 3x4, 4x2, 5, 5
+        introFrames = 1, 2x2, 3, 4x2
+    # All three lines are optional. loopCount indicates the number of times the animation will repeat (indefinitely by default).
+    frames is the sequence in which the frames will be shown.
+        Add an x# after the frame image number to repeat the image for multiple animation frames. 
+    introFrames is a sequence of frames that will play once before the frames sequence begins, when the card is first highlighted.
+    If a frame sequence is not specified, images will play in order from 1 to the last sequentially numbered image found.
+
+card-pressed.png
+    Displayed on A button down in the launcher when the view mode is set to "cards". Must be 350 x 155 pixels.
+
+icon.png
+    The game’s main icon image, visible in the launcher when the view mode is set to "list". Must be 32 x 32 pixels.
+
+icon-highlighted/
+    A folder of images that will be played in in a loop when your game is selected in the launcher when the view mode 
+    is set to "list". Images should be named 1.png, 2.png, etc. Each image must be 32 x 32 pixels. 
+    This folder can optionally contain a text file called animation.txt with same format as described for card-highlighted.
+
+icon-pressed.png
+    Displayed on A button down in the launcher when the view mode is set to "list". Must be 32 x 32 pixels.
+
+launchImage.png
+    An image that displays while your game is loading, before it is responsive, when the launcher is set to 
+    "card" view mode, or in "list" view mode if launchImage-list.png is not provided. 
+    Must be fullscreen 400 x 240 pixels, and should not contain transparency. 
+    In "card" view mode, this image will be used as the last frame in the game launch animation, if launchImages/ are provided.
+
+launchImage-list.png
+    An image that displays while your game is loading, before it is responsive, when the launcher is set to 
+    "list" view mode. Must be fullscreen 400 x 240 pixels, and should not contain transparency.
+
+launchImages/
+    A folder of images (named 1.png, 2.png, …) that will be played as a transition animation at 
+    20 frames per second when your game is launched when the view mode in the launcher is set to "cards".
+    Images can contain transparency, but should all be 400 x 240 pixels. 
+    See the provided sample game Level 1-1 for an example. 
+    Before the game launch animation your game’s card image (or card-highlighted, or card-pressed image, 
+    if available) is drawn by the launcher centered on the screen, drawn in the rect (25, 43, 350, 155) 
+    so your animation should assume that image with transparent surrounding space as a starting frame.
+
+wrapping-pattern.png
+    Optional, but if present, will be used as the pattern for the wrapping paper on newly-downloaded games 
+    that have yet to be unwrapped. The image dimensions should be 400 x 240 pixels. 
+    (Template files are available to help you design the wrapping-paper art for your game. 
+    This functionality can be tested in the simulator by selecting "Wrap Current Game" from the Playdate menu.)
+
+
+launchSoundPath
+    Optional. Should point to the path of a short audio file to be played as the game launch animation is taking place.
+
+###
+At minimum, all games should include card.png, icon.png and a _launchImage.png which will be displayed 
+as the system loads the game.
+###

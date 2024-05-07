@@ -1,0 +1,8 @@
+name=Ink & Cozy
+author=Adam Schellenberg
+description=You did it. You finally opened a bookstore. Now what?
+bundleID=com.adamschellenberg.inkandcozy
+version=0.0.1
+buildNumber=0001
+imagePath=assets/launcher/
+launchSoundPath=assets/launcher
